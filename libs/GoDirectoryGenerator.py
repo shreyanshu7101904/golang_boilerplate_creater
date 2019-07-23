@@ -42,7 +42,7 @@ def createDirectoryStructure(parent, username, repo):
 @click.option('--d', default=None, help='parent directory name')
 @click.option('--u', default="User", help='github username')
 @click.option('--r', default='abc', help='github repository name')
-def countvalue(p, d, u, r):
+def directoryGenerator(p, d, u, r):
     animationAsciiTextGenerator("Go Lib Tool")    
     if d is None:
         animationGenerator()
@@ -55,4 +55,4 @@ def countvalue(p, d, u, r):
 
 
 if __name__ == '__main__':
-    countvalue()
+    directoryGenerator()
