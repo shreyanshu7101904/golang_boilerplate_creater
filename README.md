@@ -3,11 +3,12 @@ Create golang project structure
 ##installation libraries
 `install requirements.txt
   pip3 install requirements.txt`
-##usage
+## usage
+
 `
 python3 golang.py --d /home/getmyuni/Music/github --p golan_proj --u shreyanshu7101904 --r pytho
 `
-##options
+## options
 `
 --d = directory name  : directory name where to create project
 --p = folder name     : folder name for that project
