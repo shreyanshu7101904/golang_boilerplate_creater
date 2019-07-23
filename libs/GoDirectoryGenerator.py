@@ -5,44 +5,54 @@ import click
 import os
 import sys
 
-def animationGenerator(text):
+def animationGenerator(text= None):
     if text:
         print (Fore.RED  + text)
     else:    
         animation = "|/-\\"
         idx = 0
         while True:
-                print (Fore.CYAN  + animation[idx % len(animation)] + "\r", end="")
+                print (Fore.CYAN  + "Generating Directories" +animation[idx % len(animation)] + "\r", end="")
                 idx += 1
                 time.sleep(0.1)
+                if idx ==5:
+                        break
 
 def animationAsciiTextGenerator(text):
     result = pyfiglet.figlet_format(text, font = "isometric1")
-    print(Fore.CYAN + result)
+    print(Fore.YELLOW + result, end="")
 
-def createDirectoryStructure(username, repo):
+def createDirectoryStructure(parent, username, repo):
+    try:
+            os.mkdir(parent)   
+    except FileExistsError:
+            pass    
     try:    
-        os.mkdir("bin")
-        temp = "src/github.com/"+ username + "/"+ repo
+        os.mkdir(parent + "/bin")
+        temp = parent + "/src/github.com/"+ username + "/"+ repo
         os.makedirs(temp)
+        animationGenerator("Directory created at = "+ os.getcwd())
     except FileExistsError:
             animationGenerator("Directory Already Exists !!! ")
             animationGenerator("Exited !!!")
 
 
 @click.command()
+@click.option('--p', default="go", help='path for directory creation')
 @click.option('--d', default=None, help='parent directory name')
 @click.option('--u', default="User", help='github username')
 @click.option('--r', default='abc', help='github repository name')
-def countvalue(d, u, r):
+def countvalue(p, d, u, r):
+    animationAsciiTextGenerator("Go Lib Tool")    
     if d is None:
-        createDirectoryStructure(u, r)
+        animationGenerator()
+        createDirectoryStructure(p, u, r)
     else:
+        animationGenerator()
         os.chdir(d)
-        createDirectoryStructure(u, r)
+        createDirectoryStructure(p, u, r)
+        
 
 
 if __name__ == '__main__':
-    # animationAsciiTextGenerator("GO") /home/getmyuni/Music/github
-    # animationGenerator()
     countvalue()
