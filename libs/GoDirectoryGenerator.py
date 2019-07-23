@@ -1,9 +1,23 @@
 import time
 from colorama import Fore, Back, Style
-import pyfiglet
+# import pyfiglet
 import click
 import os
 import sys
+
+data = """
+      ___          ___                                                                        ___          ___                 
+     /  /\        /  /\                             ___        _____                  ___    /  /\        /  /\                
+    /  /:/_      /  /::\                           /  /\      /  /::\                /  /\  /  /::\      /  /::\               
+   /  /:/ /\    /  /:/\:\            ___     ___  /  /:/     /  /:/\:\              /  /:/ /  /:/\:\    /  /:/\:\  ___     ___ 
+  /  /:/_/::\  /  /:/  \:\          /__/\   /  /\/__/::\    /  /:/~/::\            /  /:/ /  /:/  \:\  /  /:/  \:\/__/\   /  /\
+ /__/:/__\/\:\/__/:/ \__\:\         \  \:\ /  /:/\__\/\:\__/__/:/ /:/\:|          /  /::\/__/:/ \__\:\/__/:/ \__\:\  \:\ /  /:/
+ \  \:\ /~~/:/\  \:\ /  /:/          \  \:\  /:/    \  \:\/\  \:\/:/~/:/         /__/:/\:\  \:\ /  /:/\  \:\ /  /:/\  \:\  /:/ 
+  \  \:\  /:/  \  \:\  /:/            \  \:\/:/      \__\::/\  \::/ /:/          \__\/  \:\  \:\  /:/  \  \:\  /:/  \  \:\/:/  
+   \  \:\/:/    \  \:\/:/              \  \::/       /__/:/  \  \:\/:/                \  \:\  \:\/:/    \  \:\/:/    \  \::/   
+    \  \::/      \  \::/                \__\/        \__\/    \  \::/                  \__\/\  \::/      \  \::/      \__\/    
+     \__\/        \__\/                                        \__\/                         \__\/        \__\/                
+"""
 
 def animationGenerator(text= None):
     if text:
@@ -19,8 +33,8 @@ def animationGenerator(text= None):
                         break
 
 def animationAsciiTextGenerator(text):
-    result = pyfiglet.figlet_format(text, font = "isometric1")
-    print(Fore.YELLOW + result, end="")
+#     result = pyfiglet.figlet_format(text, font = "isometric1")
+    print(Fore.YELLOW + data, end="")
 
 def createDirectoryStructure(parent, username, repo):
     try:
