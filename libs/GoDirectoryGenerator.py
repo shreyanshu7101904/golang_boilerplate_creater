@@ -33,7 +33,7 @@ def createDirectoryStructure(parent, username, repo):
         os.makedirs(temp)
         animationGenerator("Directory created at = "+ os.getcwd())
     except FileExistsError:
-            animationGenerator("Directory Already Exists !!! ")
+            animationGenerator("Directory Already Exists !!!  at " + os.getcwd())
             animationGenerator("Exited !!!")
 
 
