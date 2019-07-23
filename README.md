@@ -1,4 +1,6 @@
-# golang_boilerplate_creater
+[![Build Status](https://travis-ci.org/shreyanshu7101904/golang_boilerplate_creater.svg?branch=master)](https://travis-ci.org/shreyanshu7101904/golang_boilerplate_creater)
+
+# golang Directory Builder
 Create golang project structure
 ##installation libraries
 `install requirements.txt
